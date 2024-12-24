@@ -3,6 +3,7 @@ import "~/styles/globals.css";
 import { GeistSans } from "geist/font/sans";
 import { type Metadata } from "next";
 import TopNav from "./_components/topnav";
+import { Toaster } from "~/components/ui/toaster";
 
 export const metadata: Metadata = {
   title: "Dumb It Down",
@@ -18,6 +19,7 @@ export default function RootLayout({
       <body>
         <TopNav />
         {children}
+        <Toaster />
       </body>
     </html>
   );

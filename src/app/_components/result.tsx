@@ -1,3 +1,4 @@
+import { Copy } from "lucide-react";
 import { Dispatch, SetStateAction } from "react";
 import {
   Accordion,
@@ -8,6 +9,7 @@ import {
 import { Button } from "~/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card";
 import { Separator } from "~/components/ui/separator";
+import { useToast } from "~/hooks/use-toast";
 
 type ResultProps = {
   result: string;
@@ -17,19 +19,31 @@ type ResultProps = {
 };
 
 const Result = ({ result, text, setResult, setText }: ResultProps) => {
-  const handleClick = () => {
+  const { toast } = useToast();
+
+  const handleGoBack = () => {
     setText("");
     setResult("");
   };
 
+  const handleCopy = () => {
+    navigator.clipboard.writeText(result);
+    toast({
+      description: "Copied to clipboard.",
+    });
+  };
+
   return (
     <div className="flex flex-col items-end">
-      <Button onClick={handleClick} variant={"link"} size={"sm"}>
+      <Button onClick={handleGoBack} variant={"link"} size={"sm"}>
         Go Back
       </Button>
       <Card>
         <CardHeader className="flex flex-row items-center justify-between">
           <CardTitle>Simplified</CardTitle>
+          <Button onClick={handleCopy} size={"sm"} variant={"ghost"}>
+            <Copy size={16} />
+          </Button>
         </CardHeader>
         <CardContent>
           <p>{result}</p>
@@ -47,3 +61,6 @@ const Result = ({ result, text, setResult, setText }: ResultProps) => {
 };
 
 export default Result;
+function useToaster(): { toast: any } {
+  throw new Error("Function not implemented.");
+}
