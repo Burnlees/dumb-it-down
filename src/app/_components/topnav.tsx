@@ -1,11 +1,13 @@
 "use client";
 
 import React from "react";
+import { ModeToggle } from "./themetoggle";
 
 const TopNav = () => {
   return (
-    <nav className="w-full p-4">
+    <nav className="flex w-full items-center justify-between p-4">
       <div className="text-xl font-bold">Dumb It Down</div>
+      <ModeToggle />
     </nav>
   );
 };
