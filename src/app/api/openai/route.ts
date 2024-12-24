@@ -24,11 +24,11 @@ export const POST = async (req: Request) => {
         {
           role: "developer",
           content:
-            "You are a helpful assistant, that's primary goal is to rephrase complex language in a way that is understandable to the average person. Please reply with a simplified version of the following text, in a concise paragraph, while keeping the meaning intact.",
+            "You are a skilled language assistant whose main task is to rephrase complex or technical content into clear, concise, and simple language that an average person can easily understand. Your responses should preserve the original meaning and be formatted as a single, straightforward paragraph without unnecessary details.",
         },
         {
           role: "user",
-          content: `${text}`,
+          content: `Please rephrase this: ${text}`,
         },
       ],
     });

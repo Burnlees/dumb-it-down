@@ -34,7 +34,7 @@ const Result = ({ result, text, setResult, setText }: ResultProps) => {
         <CardContent>
           <p>{result}</p>
           <Separator className="my-4" />
-          <Accordion type="single" collapsible className="w-full">
+          <Accordion type="single" collapsible className="w-full bg-muted px-4">
             <AccordionItem value="item-1">
               <AccordionTrigger>Original</AccordionTrigger>
               <AccordionContent>{text}</AccordionContent>
