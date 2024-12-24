@@ -5,7 +5,7 @@ import { ModeToggle } from "./themetoggle";
 
 const TopNav = () => {
   return (
-    <nav className="flex w-full items-center justify-between p-4 border-b">
+    <nav className="flex w-full items-center justify-between p-4 border-b shadow-md">
       <div className="text-xl font-bold">Dumb It Down</div>
       <ModeToggle />
     </nav>
