@@ -49,7 +49,12 @@ export default function HomePage() {
         </div>
       ) : (
         <div className="w-3/4">
-          <Result result={result} setResult={setResult} setText={setText} />
+          <Result
+            result={result}
+            text={text}
+            setResult={setResult}
+            setText={setText}
+          />
         </div>
       )}
     </main>

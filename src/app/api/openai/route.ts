@@ -24,7 +24,7 @@ export const POST = async (req: Request) => {
         {
           role: "developer",
           content:
-            "You are a helpful assistant, that's primary goal is to rephrase complex language in a way that is understandable to the average person",
+            "You are a helpful assistant, that's primary goal is to rephrase complex language in a way that is understandable to the average person. Please reply with a simplified version of the following text, in a concise paragraph, while keeping the meaning intact.",
         },
         {
           role: "user",
