@@ -1,20 +1,27 @@
-import React from "react";
+import { Dispatch, SetStateAction } from "react";
 import { Button } from "~/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card";
 
 type ResultProps = {
   result: string;
+  setResult: Dispatch<SetStateAction<string>>;
+  setText: Dispatch<SetStateAction<string>>;
 };
 
-const Result = ({ result }: ResultProps) => {
+const Result = ({ result, setResult, setText }: ResultProps) => {
+  const handleClick = () => {
+    setText("");
+    setResult("");
+  };
+
   return (
-    <div>
+    <div className="flex flex-col items-end">
+      <Button onClick={handleClick} variant={"link"} size={"sm"}>
+        Go Back
+      </Button>
       <Card>
         <CardHeader className="flex flex-row items-center justify-between">
           <CardTitle>Simplified</CardTitle>
-          <Button className="w-fit" size={"sm"}>
-            Go Back
-          </Button>
         </CardHeader>
         <CardContent>
           <p>{result}</p>
