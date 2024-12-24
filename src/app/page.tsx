@@ -28,9 +28,9 @@ export default function HomePage() {
   }
 
   return (
-    <main className="flex my-auto flex-col items-center justify-center gap-12">
+    <main className="my-auto flex flex-col items-center justify-center gap-12">
       {!result.length ? (
-        <div className="flex w-5/6 flex-col items-center">
+        <div className="mx-4 flex w-full flex-col items-center xl:w-5/6">
           <h1 className="text-xl font-bold">What would you like simplified?</h1>
           <form
             className="flex w-full flex-col items-end gap-4 p-4"
@@ -48,7 +48,7 @@ export default function HomePage() {
           </form>
         </div>
       ) : (
-        <div className="w-3/4">
+        <div className="mx-4 xl:w-5/6">
           <Result
             result={result}
             text={text}
