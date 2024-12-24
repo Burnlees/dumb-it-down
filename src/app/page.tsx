@@ -28,7 +28,7 @@ export default function HomePage() {
   }
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center gap-12">
+    <main className="flex my-auto flex-col items-center justify-center gap-12">
       {!result.length ? (
         <div className="flex w-5/6 flex-col items-center">
           <h1 className="text-xl font-bold">What would you like simplified?</h1>
