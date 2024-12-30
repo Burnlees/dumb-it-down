@@ -13,8 +13,8 @@ export default function HomePage() {
   const [loading, setLoading] = useState(false);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    setLoading(true);
     e.preventDefault();
+    setLoading(true);
     const simplifiedText = await simplifyText(text);
     setResult(simplifiedText);
     setLoading(false);

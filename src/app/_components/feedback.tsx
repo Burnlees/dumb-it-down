@@ -12,7 +12,6 @@ import {
   AlertDialogTrigger,
 } from "~/components/ui/alert-dialog";
 import { Button } from "~/components/ui/button";
-import { postFeedback } from "~/server/mutations";
 import { useToast } from "~/hooks/use-toast";
 
 const Feedback = () => {
