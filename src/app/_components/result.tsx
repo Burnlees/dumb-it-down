@@ -10,6 +10,7 @@ import { Button } from "~/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card";
 import { Separator } from "~/components/ui/separator";
 import { useToast } from "~/hooks/use-toast";
+import Feedback from "./feedback";
 
 type ResultProps = {
   result: string;
@@ -38,7 +39,7 @@ const Result = ({ result, text, setResult, setText }: ResultProps) => {
       <Button onClick={handleGoBack} variant={"link"} size={"sm"}>
         Go Back
       </Button>
-      <Card>
+      <Card className="w-full">
         <CardHeader className="flex flex-row items-center justify-between">
           <CardTitle>Simplified</CardTitle>
           <Button onClick={handleCopy} size={"sm"} variant={"ghost"}>
@@ -47,6 +48,8 @@ const Result = ({ result, text, setResult, setText }: ResultProps) => {
         </CardHeader>
         <CardContent>
           <p>{result}</p>
+          <div className="">
+          </div>
           <Separator className="my-4" />
           <Accordion type="single" collapsible className="w-full bg-muted px-4">
             <AccordionItem value="item-1">
@@ -56,6 +59,7 @@ const Result = ({ result, text, setResult, setText }: ResultProps) => {
           </Accordion>
         </CardContent>
       </Card>
+            <Feedback />
     </div>
   );
 };

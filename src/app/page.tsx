@@ -6,6 +6,7 @@ import { Textarea } from "~/components/ui/textarea";
 import { simplifyText } from "~/lib/simplifyText";
 import Result from "./_components/result";
 import { ProgressBar } from "./_components/progressbar";
+
 export default function HomePage() {
   const [text, setText] = useState("");
   const [result, setResult] = useState("");
