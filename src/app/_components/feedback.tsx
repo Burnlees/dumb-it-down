@@ -38,7 +38,7 @@ const Feedback = () => {
         title: "Feedback submitted!",
         description: "Thank you for your feedback.",
       });
-    } catch (error: any) {
+    } catch (error: unknown) {
       toast({ title: "Error", description: error.message });
     }
   };

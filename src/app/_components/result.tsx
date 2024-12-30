@@ -1,5 +1,5 @@
 import { Copy } from "lucide-react";
-import { Dispatch, SetStateAction } from "react";
+import type { Dispatch, SetStateAction } from "react";
 import {
   Accordion,
   AccordionContent,
@@ -65,6 +65,3 @@ const Result = ({ result, text, setResult, setText }: ResultProps) => {
 };
 
 export default Result;
-function useToaster(): { toast: any } {
-  throw new Error("Function not implemented.");
-}
