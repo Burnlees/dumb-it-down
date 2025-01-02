@@ -3,8 +3,6 @@ import { postFeedback } from "~/server/mutations";
 
 export const POST = async (req: Request) => {
   try {
-    console.log("Received request");
-
     const body = await req.json();
 
     const {message, rating } = body;

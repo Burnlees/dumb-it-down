@@ -39,7 +39,11 @@ const Feedback = () => {
         description: "Thank you for your feedback.",
       });
     } catch (error: unknown) {
-      toast({ title: "Error", description: error.message });
+      if (error instanceof Error) {
+        toast({ title: "Error", description: error.message });
+      } else {
+        toast({ title: "Error", description: "An unknown error occurred." });
+      }
     }
   };
 
