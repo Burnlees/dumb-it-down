@@ -48,8 +48,6 @@ const Result = ({ result, text, setResult, setText }: ResultProps) => {
         </CardHeader>
         <CardContent>
           <p>{result}</p>
-          <div className="">
-          </div>
           <Separator className="my-4" />
           <Accordion type="single" collapsible className="w-full bg-muted px-4">
             <AccordionItem value="item-1">
@@ -59,7 +57,7 @@ const Result = ({ result, text, setResult, setText }: ResultProps) => {
           </Accordion>
         </CardContent>
       </Card>
-            <Feedback />
+      <Feedback />
     </div>
   );
 };
