@@ -6,19 +6,32 @@ import { Textarea } from "~/components/ui/textarea";
 import { simplifyText } from "~/lib/simplifyText";
 import Result from "./_components/result";
 import { ProgressBar } from "./_components/progressbar";
+import { useToast } from "~/hooks/use-toast";
 
 export default function HomePage() {
   const [text, setText] = useState("");
   const [result, setResult] = useState("");
   const [loading, setLoading] = useState(false);
 
-  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  const { toast } = useToast();
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setLoading(true);
-    const simplifiedText = await simplifyText(text);
-    setResult(simplifiedText);
-    setLoading(false);
-  }
+    try {
+      setLoading(true);
+      if (!text) {
+        throw new Error("Please enter some text.");
+      }
+      const simplifiedText = await simplifyText(text);
+      setResult(simplifiedText);
+      setLoading(false);
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        toast({ title: "Error", description: error.message });
+      }
+      setLoading(false);
+    }
+  };
 
   if (loading) {
     return (
